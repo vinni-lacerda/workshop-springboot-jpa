@@ -3,6 +3,7 @@ package com.udemyJava.course.services;
 import com.udemyJava.course.entities.User;
 import com.udemyJava.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,4 +22,11 @@ public class UserService {
         Optional<User> obj = userRepository.findById(id);
         return obj.get();
     }
+    public User insert(User user){
+        return userRepository.save(user);
+    }
+//    public ResponseEntity<User> saveUser(User user){
+//        User obj = userRepository.save(user);
+//        return ResponseEntity.ok().body(obj);
+//    }
 }
