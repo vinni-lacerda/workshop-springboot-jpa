@@ -1,10 +1,6 @@
 package com.udemyJava.course.config;
 
-import com.udemyJava.course.entities.Category;
-import com.udemyJava.course.entities.Order;
-import com.udemyJava.course.entities.Product;
-import com.udemyJava.course.entities.User;
-import com.udemyJava.course.entities.OrderItem;
+import com.udemyJava.course.entities.*;
 import com.udemyJava.course.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -69,5 +65,9 @@ public class TestConfig implements CommandLineRunner {
 
         orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
 
+        Payment pay1 = new Payment(null, Instant.parse("2025-09-24T21:28:07Z"), o1);
+        o1.setPayment(pay1);
+
+        orderRepository.save(o1);
     }
 }
