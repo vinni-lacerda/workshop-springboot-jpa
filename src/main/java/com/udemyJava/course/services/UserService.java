@@ -25,8 +25,7 @@ public class UserService {
     public User insert(User user){
         return userRepository.save(user);
     }
-//    public ResponseEntity<User> saveUser(User user){
-//        User obj = userRepository.save(user);
-//        return ResponseEntity.ok().body(obj);
-//    }
+    public void delete(Long id){
+        userRepository.deleteById(id);
+    }
 }
