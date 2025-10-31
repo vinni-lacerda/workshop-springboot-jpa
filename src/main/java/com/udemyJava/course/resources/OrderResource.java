@@ -28,13 +28,15 @@ public class OrderResource {
        return ResponseEntity.ok().body(obj);
     }
     @PostMapping
-    public Order saveOrder(@RequestBody Order order){
-        return orderService.saveOrder(order);
+    public ResponseEntity<Order> saveOrder(@RequestBody Order order){
+        Order obj = orderService.saveOrder(order);
+        return ResponseEntity.ok().body(obj);
     }
 
     @DeleteMapping
-    public void deleteOrder(@PathVariable Long id){
+        public ResponseEntity<Void> deleteOrder(@PathVariable Long id){
         orderService.deleteOrder(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
