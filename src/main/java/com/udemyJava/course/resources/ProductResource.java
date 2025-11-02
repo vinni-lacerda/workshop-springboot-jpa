@@ -23,12 +23,12 @@ public class ProductResource {
          return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id){
         Product obj = productService.findProductById(id);
         return ResponseEntity.ok().body(obj);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id){
         productService.deletProductById(id);
         return ResponseEntity.noContent().build();

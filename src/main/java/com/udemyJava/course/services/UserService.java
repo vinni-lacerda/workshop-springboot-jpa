@@ -2,6 +2,7 @@ package com.udemyJava.course.services;
 
 import com.udemyJava.course.entities.User;
 import com.udemyJava.course.repositories.UserRepository;
+import com.udemyJava.course.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
@@ -22,7 +23,7 @@ public class UserService {
     }
     public User findById(Long id){
         Optional<User> obj = userRepository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
     public User insert(User user){
         return userRepository.save(user);
