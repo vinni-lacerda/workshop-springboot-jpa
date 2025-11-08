@@ -59,24 +59,20 @@ O sistema modela um **fluxo de pedidos**, com as seguintes entidades:
 
 ## ⚙️ Estrutura do Projeto
 
+```text
 src/
 ├─ main/
 │  ├─ java/
-│  │  └─ com/
-│  │     └─ vinnilacerda/
-│  │        └─ workshop/
-│  │           ├─ entities/
-│  │           ├─ repositories/
-│  │           ├─ resources/     # controllers / rest
-│  │           └─ services/
+│  │  └─ com/SeuUsuario/workshop/
+│  │     ├─ entities/
+│  │     ├─ repositories/
+│  │     ├─ controllers/
+│  │     └─ services/
 │  └─ resources/
 │     ├─ application.properties
 │     └─ import.sql
 └─ test/
-   └─ java/
-      └─ com/
-         └─ vinnilacerda/
-            └─ workshop/
+   └─ java/com/SeuUsuario/workshop/
 
 
 ---
