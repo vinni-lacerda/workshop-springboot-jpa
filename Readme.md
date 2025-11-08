@@ -60,17 +60,24 @@ O sistema modela um **fluxo de pedidos**, com as seguintes entidades:
 ## ⚙️ Estrutura do Projeto
 
 src/
-├── main/
-│ ├── java/com/SeuUsuario/workshop
-│ │ ├── entities/
-│ │ ├── repositories/
-│ │ ├── resources/
-│ │ └── services/
-│ └── resources/
-│ ├── application.properties
-│ └── import.sql
-└── test/
-└── java/com/SeuUsuario/workshop
+├─ main/
+│  ├─ java/
+│  │  └─ com/
+│  │     └─ vinnilacerda/
+│  │        └─ workshop/
+│  │           ├─ entities/
+│  │           ├─ repositories/
+│  │           ├─ resources/     # controllers / rest
+│  │           └─ services/
+│  └─ resources/
+│     ├─ application.properties
+│     └─ import.sql
+└─ test/
+   └─ java/
+      └─ com/
+         └─ vinnilacerda/
+            └─ workshop/
+
 
 ---
 
@@ -128,5 +135,5 @@ Sinta-se livre para usar, estudar e modificar conforme desejar.
 
 👨‍💻 Autor
 
-<a href= https://www.linkedin.com/in/vinni-lacerda>Vinícius Lacerda</a>
-📎 GitHub
+📎 <a href= https://www.linkedin.com/in/vinni-lacerda>Vinícius Lacerda</a>
+📎 <a href=https://github.com/vinni-lacerda>GitHub</a>
