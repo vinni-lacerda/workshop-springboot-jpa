@@ -21,7 +21,7 @@ O objetivo é criar uma aplicação **web com API REST** utilizando **Spring Boo
 - Implementar um **modelo de domínio**
 - Estruturar camadas lógicas:  
   `resource`, `service`, `repository`
-- Configurar **banco de dados de teste (H2)**
+- Configurar **banco de dados postgreSQL e H2**
 - Popular o banco de dados com **dados iniciais**
 - Implementar operações **CRUD (Create, Read, Update, Delete)**
 - Tratar **exceções de forma personalizada**
@@ -86,6 +86,8 @@ src/
 
 ### Passos:
 
+1. Usando H2 (padrão — rápido para desenvolvimento)
+   
 1. **Clone o repositório**
    ```bash
    git clone https://github.com/vinni-lacerda/workshop-springboot-jpa.git
@@ -102,15 +104,56 @@ mvn spring-boot:run
 
 4. Acesse no navegador
 
-http://localhost:8080/
+http://localhost:8080/h2-console
+
+5. Coloque usuário e senha no H2 Console
+
+username: sa
+password:
+
+2. Usando PostgreSQL (opcional)
+
+Use esta opção se quiser persistir os dados em um banco real.
+
+🧱 A. Criar banco e usuário no PostgreSQL
+
+No terminal do Postgres (psql):
+```text
+CREATE DATABASE workshopdb;
+CREATE USER postgres WITH ENCRYPTED PASSWORD 'YOUR_PASSWORD';
+GRANT ALL PRIVILEGES ON DATABASE workshopdb TO postgres;
+```
+
+Substitua YOUR_PASSWORD pela senha do seu usuário.
+
+B. Atualize o arquivo application.properties
+
+No diretório src/main/resources, use a seguinte configuração:
+```text
+# PostgreSQL Configuration
+spring.datasource.url=jdbc:postgresql://localhost:5432/workshopdb
+spring.datasource.username=postgres
+spring.datasource.password=YOUR_PASSWORD
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+```
 
 📡 Endpoints Exemplos
+```text
 Método	 Endpoint	   Descrição
 GET	    /users	     Lista todos os usuários
 GET	    /users/{id}  Busca usuário por ID
 POST	  /users	     Cadastra novo usuário
 PUT	    /users/{id}	 Atualiza usuário existente
 DELETE	/users/{id}	 Remove usuário
+```
+C. Execute o projeto
+
+mvn spring-boot:run
 
 🧱 Próximos Passos:
 
