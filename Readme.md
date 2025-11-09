@@ -86,7 +86,7 @@ src/
 
 ### Passos:
 
-1. Usando H2 (padrão — rápido para desenvolvimento)
+Usando H2 (padrão — rápido para desenvolvimento)
    
 1. **Clone o repositório**
    ```bash
@@ -112,7 +112,7 @@ http://localhost:8080/h2-console
 username: sa
 password:
 ```
-2. Usando PostgreSQL (opcional)
+Usando PostgreSQL (opcional)
 
 Use esta opção se quiser persistir os dados em um banco real.
 
