@@ -22,6 +22,11 @@ public class ProductResource {
         List<Product> list = productService.findAllProducts();
          return ResponseEntity.ok().body(list);
     }
+    @PostMapping
+    public ResponseEntity<Product> saveProduct(@RequestBody Product product){
+        Product obj = productService.saveProduct(product);
+        return ResponseEntity.ok().body(obj);
+    }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id){
