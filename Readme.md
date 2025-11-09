@@ -93,24 +93,25 @@ src/
    git clone https://github.com/vinni-lacerda/workshop-springboot-jpa.git
 
 2. Acesse o diretório
-
+```text
 cd workshop-springboot-jpa
-
+```
 
 3. Execute o projeto
-
+```text
 mvn spring-boot:run
-
+```
 
 4. Acesse no navegador
-
+```text
 http://localhost:8080/h2-console
+```
 
 5. Coloque usuário e senha no H2 Console
-
+```text
 username: sa
 password:
-
+```
 2. Usando PostgreSQL (opcional)
 
 Use esta opção se quiser persistir os dados em um banco real.
@@ -125,6 +126,7 @@ GRANT ALL PRIVILEGES ON DATABASE workshopdb TO postgres;
 ```
 
 Substitua YOUR_PASSWORD pela senha do seu usuário.
+
 
 B. Atualize o arquivo application.properties
 
@@ -142,6 +144,11 @@ spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
 
+C. Execute o projeto
+```text
+mvn spring-boot:run
+```
+
 📡 Endpoints Exemplos
 ```text
 Método	 Endpoint	   Descrição
@@ -151,9 +158,6 @@ POST	  /users	     Cadastra novo usuário
 PUT	    /users/{id}	 Atualiza usuário existente
 DELETE	/users/{id}	 Remove usuário
 ```
-C. Execute o projeto
-
-mvn spring-boot:run
 
 🧱 Próximos Passos:
 
